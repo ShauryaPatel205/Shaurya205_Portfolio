@@ -18,7 +18,7 @@ window.addEventListener('mousemove',e=>{
   requestAnimationFrame(auraLoop);
 })();
 
-/* Typing Animation */
+/* Typing */
 const text="Web Developer & BGMI Gamer";
 const typing=document.getElementById("typing");
 let i=0;
@@ -31,7 +31,7 @@ function type(){
       typing.textContent="";
       i=0;
       type();
-    },5000);
+    },4000);
   }
 }
 type();
@@ -83,7 +83,6 @@ class P{
 window.addEventListener('click',e=>{
   for(let i=0;i<20;i++)
     particles.push(new P(e.clientX,e.clientY));
-  if(particles.length>600)particles.splice(0,200);
 });
 (function loop(){
   ctx.clearRect(0,0,canvas.width,canvas.height);
@@ -94,25 +93,22 @@ window.addEventListener('click',e=>{
   requestAnimationFrame(loop);
 })();
 
-/* Project Slider — FIXED */
-const slider = document.querySelector('.project-slider');
-const slides = document.querySelectorAll('.project-card');
-let index = 0;
+/* Project Slider */
+const track=document.querySelector('.project-track');
+const slides=document.querySelectorAll('.project-card');
+let index=0;
 
 function updateSlider(){
-  slider.style.transform = `translateX(-${index * 100}%)`;
+  track.style.transform=`translateX(-${index*100}%)`;
 }
 
-document.getElementById('next').addEventListener('click',()=>{
-  index = (index + 1) % slides.length;
+document.getElementById('next').onclick=()=>{
+  index=(index+1)%slides.length;
   updateSlider();
-});
-
-document.getElementById('prev').addEventListener('click',()=>{
-  index = (index - 1 + slides.length) % slides.length;
+};
+document.getElementById('prev').onclick=()=>{
+  index=(index-1+slides.length)%slides.length;
   updateSlider();
-});
+};
 
-/* ensure first project visible */
 updateSlider();
-
