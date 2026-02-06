@@ -49,34 +49,29 @@ body{
   font-size:3rem;
 }
 
-/* Runner */
+/* Runner FIX */
+.hero-name{
+  position:relative;
+  display:inline-block;
+  font-size:3rem;
+  padding-top:35px; /* runner ke liye space */
+}
+
 .runner-line{
   position:absolute;
-  top:-18px;
+  top:0;
   left:0;
   width:100%;
-  height:30px;
-  border-top:2px solid rgba(255,255,255,.4);
-  overflow:hidden;
+  height:45px;            /* IMPORTANT */
+  overflow:visible;       /* ❗ CUT band */
+  pointer-events:none;
 }
 
 .runner{
   position:absolute;
-  top:-12px;
-  height:28px;
+  top:0;                  /* ❗ negative hatao */
+  height:40px;            /* GIF full visible */
   animation:run 5s linear infinite;
-}
-
-@keyframes run{
-  from{left:-40px}
-  to{left:calc(100% + 40px)}
-}
-
-#typing{
-  color:#ffb300;
-  font-size:1.2rem;
-  border-right:2px solid #ff6b00;
-  padding-right:5px;
 }
 
 /* Profile */
@@ -95,9 +90,9 @@ body{
   gap:20px;
   animation:rotateSkills 18s linear infinite;
 }
-@keyframes rotateSkills{
-  from{transform:translateX(0)}
-  to{transform:translateX(-50%)}
+@keyframes run{
+  from{left:-50px}
+  to{left:calc(100% + 50px)}
 }
 
 .skill-card{
