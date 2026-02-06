@@ -112,17 +112,46 @@ body{
 .skill-icon{width:90px}
 
 /* Projects */
-.project-slider{display:flex;overflow:hidden}
-.project-card{min-width:100%;text-align:center}
-.project-card img{width:200px}
-.slider-controls{text-align:center;margin-top:15px}
+#projects{
+  margin-top:60px;
+}
+
+.project-slider{
+  display:flex;
+  width:100%;
+  overflow:hidden;
+  transition:transform .6s ease;
+}
+
+.project-card{
+  min-width:100%;
+  flex-shrink:0;
+  text-align:center;
+}
+
+.project-card img{
+  width:200px;
+}
+
+.project-card a{
+  color:white;
+  text-decoration:none;
+}
+
+.slider-controls{
+  text-align:center;
+  margin-top:15px;
+}
+
 .slider-controls button{
   background:var(--accent);
   border:none;
   padding:10px 15px;
   margin:5px;
   cursor:pointer;
+  font-weight:bold;
 }
+
 
 /* Kill Flash */
 .kill-flash{

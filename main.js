@@ -94,14 +94,25 @@ window.addEventListener('click',e=>{
   requestAnimationFrame(loop);
 })();
 
-/* Project Slider */
-const slider=document.querySelector('.project-slider');
-let index=0;
-document.getElementById('next').onclick=()=>{
-  index=(index+1)%slider.children.length;
-  slider.style.transform=`translateX(-${index*100}%)`;
-};
-document.getElementById('prev').onclick=()=>{
-  index=(index-1+slider.children.length)%slider.children.length;
-  slider.style.transform=`translateX(-${index*100}%)`;
-};
+/* Project Slider — FIXED */
+const slider = document.querySelector('.project-slider');
+const slides = document.querySelectorAll('.project-card');
+let index = 0;
+
+function updateSlider(){
+  slider.style.transform = `translateX(-${index * 100}%)`;
+}
+
+document.getElementById('next').addEventListener('click',()=>{
+  index = (index + 1) % slides.length;
+  updateSlider();
+});
+
+document.getElementById('prev').addEventListener('click',()=>{
+  index = (index - 1 + slides.length) % slides.length;
+  updateSlider();
+});
+
+/* ensure first project visible */
+updateSlider();
+
