@@ -18,11 +18,7 @@ body{
 
 /* Background */
 #bg-wrap{position:fixed;inset:0;z-index:-3}
-#bg-image{
-  width:100%;height:100%;
-  object-fit:cover;
-  filter:brightness(.35);
-}
+#bg-image{width:100%;height:100%;object-fit:cover;filter:brightness(.35)}
 #bg-canvas{position:absolute;inset:0}
 
 /* Aura */
@@ -37,26 +33,51 @@ body{
 }
 
 /* Header */
-.nav{
-  position:sticky;
-  top:10px;
-  backdrop-filter:blur(10px);
-}
+.nav{position:sticky;top:10px;backdrop-filter:blur(10px)}
 .nav a{color:white;margin:10px;text-decoration:none}
 
 /* Reveal */
-.reveal{
-  opacity:0;
-  transform:translateY(30px);
-  transition:1s ease;
-}
-body.loaded .reveal{
-  opacity:1;
-  transform:none;
-}
+.reveal{opacity:0;transform:translateY(40px);transition:1s ease}
+.reveal.show{opacity:1;transform:none}
 
 /* Hero */
 .hero{min-height:100vh;justify-content:center}
+
+.hero-name{
+  position:relative;
+  font-size:3rem;
+}
+
+.runner-line{
+  position:absolute;
+  top:-25px;
+  left:0;
+  width:100%;
+  border-top:2px solid rgba(255,255,255,.3);
+  overflow:hidden;
+}
+
+.runner{
+  position:absolute;
+  top:-14px;
+  height:30px;
+  animation:run 6s linear infinite;
+}
+
+@keyframes run{
+  from{left:-40px}
+  to{left:100%}
+}
+
+#typing{
+  color:#ffb300;
+  font-size:1.2rem;
+  border-right:2px solid #ff6b00;
+  padding-right:5px;
+  min-height:1.5em;
+}
+
+/* Profile */
 .profile-ring{
   width:200px;height:200px;
   border-radius:50%;
@@ -66,26 +87,44 @@ body.loaded .reveal{
 .profile{width:100%;height:100%;border-radius:50%}
 
 /* Skills */
+.skills-rotator{overflow:hidden}
 .grid{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(150px,1fr));
+  display:flex;
   gap:20px;
+  animation:rotateSkills 18s linear infinite;
+}
+@keyframes rotateSkills{
+  from{transform:translateX(0)}
+  to{transform:translateX(-50%)}
 }
 .skill-card{
+  min-width:160px;
   background:var(--glass);
   border-radius:20px;
   padding:20px;
-  transform-style:preserve-3d;
+  text-align:center;
   transition:.3s;
 }
 .skill-card:hover{
   transform:translateY(-10px) rotateX(10deg) rotateY(10deg);
   box-shadow:0 0 25px var(--accent);
 }
-.skill-icon{width:100px;transform:translateZ(40px)}
-.skill-title{transform:translateZ(25px)}
+.skill-icon{width:90px}
 
-/* Kill flash */
+/* Projects */
+.project-slider{display:flex;overflow:hidden}
+.project-card{min-width:100%;text-align:center}
+.project-card img{width:200px}
+.slider-controls{text-align:center;margin-top:15px}
+.slider-controls button{
+  background:var(--accent);
+  border:none;
+  padding:10px 15px;
+  margin:5px;
+  cursor:pointer;
+}
+
+/* Kill Flash */
 .kill-flash{
   position:fixed;inset:0;
   background:#ff4500;
@@ -93,9 +132,7 @@ body.loaded .reveal{
   pointer-events:none;
   z-index:99;
 }
-.kill-flash.active{
-  animation:kill .4s;
-}
+.kill-flash.active{animation:kill .4s}
 @keyframes kill{
   30%{opacity:.7}
   100%{opacity:0}

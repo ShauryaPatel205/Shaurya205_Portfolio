@@ -18,13 +18,13 @@
 
 <!-- Background -->
 <div id="bg-wrap">
-  <img src="assets/dregan.png" id="bg-image">
+  <img src="assets/dregan.png" id="bg-image" alt="Background">
   <canvas id="bg-canvas"></canvas>
 </div>
 
 <header class="nav">
   <div class="container">
-    <a class="logo">ShauryaPatel205</a>
+    <a class="logo" href="#home">ShauryaPatel205</a>
     <nav>
       <a href="#home">Home</a>
       <a href="#about">About</a>
@@ -37,12 +37,22 @@
 
 <main>
 
+<!-- HERO -->
 <section id="home" class="hero container center-all">
-  <h1 class="reveal">Shaurya Patel</h1>
-  <p class="tagline reveal">Web Developer & BGMI Gamer</p>
+
+  <h1 class="reveal hero-name">
+    <span class="runner-line">
+      <img src="assets/bgmi-runner.gif" class="runner" alt="BGMI Runner">
+    </span>
+    Shaurya Patel
+  </h1>
+
+  <p class="tagline reveal">
+    <span id="typing"></span>
+  </p>
 
   <div class="profile-ring reveal">
-    <img src="assets/profile.png" class="profile">
+    <img src="assets/profile.png" class="profile" alt="Shaurya Patel">
   </div>
 
   <div class="diamond reveal">
@@ -63,53 +73,65 @@
   </p>
 </section>
 
+<!-- SKILLS -->
 <section id="skills" class="container">
   <h2 class="reveal">Skills</h2>
-  <div class="grid">
 
-    <div class="skill-card icon-card" data-theme="1">
-      <div class="plate">
+  <div class="skills-rotator">
+    <div class="grid rotating">
+
+      <div class="skill-card">
         <img src="assets/html & css.png" class="skill-icon">
+        <p class="skill-title">HTML & CSS</p>
       </div>
-      <p class="skill-title">HTML & CSS</p>
-    </div>
 
-    <div class="skill-card icon-card" data-theme="2">
-      <div class="plate">
+      <div class="skill-card">
         <img src="assets/javascript.png" class="skill-icon">
+        <p class="skill-title">JavaScript</p>
       </div>
-      <p class="skill-title">JavaScript</p>
-    </div>
 
-    <div class="skill-card icon-card" data-theme="3">
-      <div class="plate">
+      <div class="skill-card">
         <img src="assets/react & vite.png" class="skill-icon">
+        <p class="skill-title">React + Vite</p>
       </div>
-      <p class="skill-title">React + Vite</p>
-    </div>
 
-    <div class="skill-card icon-card" data-theme="4">
-      <div class="plate">
+      <div class="skill-card">
         <img src="assets/django & mysql.png" class="skill-icon">
+        <p class="skill-title">Django + MySQL</p>
       </div>
-      <p class="skill-title">Django + MySQL</p>
-    </div>
 
-    <div class="skill-card icon-card" data-theme="5">
-      <div class="plate">
+      <div class="skill-card">
         <img src="assets/bgmi.png" class="skill-icon">
+        <p class="skill-title">BGMI Esports</p>
       </div>
-      <p class="skill-title">BGMI Esports</p>
-    </div>
 
+    </div>
   </div>
 </section>
 
+<!-- PROJECTS -->
 <section id="projects" class="container reveal">
   <h2>Projects</h2>
-  <div class="project-card">
-    <img src="assets/bgmi.png">
-    <p>BGMI Live Fire Theme + Interactive Effects</p>
+
+  <div class="project-slider">
+
+    <div class="project-card">
+      <img src="assets/bgmi.png">
+      <p>BGMI Live Fire Theme + Interactive Effects</p>
+    </div>
+
+    <div class="project-card">
+      <a href="https://shauryapatel205.github.io/WeatherApp/" target="_blank">
+        <img src="assets/weather.png">
+        <p>Weather App</p>
+      </a>
+    </div>
+
+  </div>
+
+  <div class="slider-controls">
+    <button id="prev">◀</button>
+    <button id="next">▶</button>
   </div>
 </section>
 
