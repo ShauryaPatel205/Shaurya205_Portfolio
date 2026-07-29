@@ -123,29 +123,37 @@ body{
 .project-card{
   min-width:100%;
   text-align:center;
+  cursor:pointer;
+}
+
+/* Full clickable project card */
+.project-card a{
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  width:100%;
+  height:100%;
+  color:white;
+  text-decoration:none;
+  cursor:pointer;
 }
 
 .project-card img{
   width:200px;
-}
-
-.project-card a{
-  color:white;
-  text-decoration:none;
-}
-
-.slider-controls{
-  text-align:center;
-  margin-top:15px;
-}
-
-.slider-controls button{
-  background:var(--accent);
-  border:none;
-  padding:10px 15px;
-  margin:5px;
+  display:block;
   cursor:pointer;
-  font-weight:bold;
+  transition:transform .3s ease;
+}
+
+.project-card a:hover img{
+  transform:scale(1.05);
+}
+
+.project-card p{
+  margin-top:12px;
+  color:white;
+  cursor:pointer;
 }
 
 /* Kill Flash */
